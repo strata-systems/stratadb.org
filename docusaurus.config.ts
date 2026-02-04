@@ -21,6 +21,10 @@ const config: Config = {
     locales: ['en'],
   },
 
+  markdown: {
+    format: 'detect',
+  },
+
   plugins: [
     [
       '@docusaurus/plugin-content-docs',
