@@ -7,10 +7,10 @@ const config: Config = {
   tagline: 'An embedded database for AI agents — six primitives, branch isolation, and deterministic replay.',
   favicon: 'img/favicon.ico',
 
-  url: 'https://stratadb.org',
-  baseUrl: '/',
+  url: 'https://strata-systems.github.io',
+  baseUrl: '/stratadb.org/',
 
-  organizationName: 'stratadb',
+  organizationName: 'strata-systems',
   projectName: 'stratadb.org',
 
   onBrokenLinks: 'throw',
