@@ -1,7 +1,7 @@
 ---
 const primitives = [
   {
-    name: 'KV Store',
+    name: 'kv',
     description: 'Key-value storage where every write is versioned. Full history, prefix scanning, and time-travel queries built in.',
     code: `db.kv.put("user:1", {"name": "Alice"})
 db.kv.get("user:1")  # {"name": "Alice"}
@@ -11,7 +11,7 @@ db.kv.history("user:1")  # Every version, timestamped`,
     icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4" />`,
   },
   {
-    name: 'Event Log',
+    name: 'event',
     description: 'Append-only event streams for audit trails, replay debugging, and deterministic execution.',
     code: `db.events.append("actions", {"type": "click"})
 db.events.list("actions", after=10, limit=5)
@@ -21,7 +21,7 @@ db.events.list("actions", after=10, limit=5)
     icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />`,
   },
   {
-    name: 'State Cell',
+    name: 'state',
     description: 'Single-value containers with compare-and-swap for safe concurrent access across processes.',
     code: `db.state.set("counter", 0)
 db.state.cas("counter", 1, expected=0)  # OK
@@ -31,7 +31,7 @@ db.state.cas("counter", 2, expected=0)  # Fail`,
     icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />`,
   },
   {
-    name: 'JSON Store',
+    name: 'json',
     description: 'Structured documents with path-based access and atomic partial updates.',
     code: `db.json.set("profile", "$.user", {"name": "Alice"})
 db.json.get("profile", "$.user.name")  # "Alice"
@@ -41,7 +41,7 @@ db.json.set("profile", "$.user.role", "admin")`,
     icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />`,
   },
   {
-    name: 'Vector Store',
+    name: 'vector',
     description: 'Semantic similarity search with HNSW indexing for embeddings and RAG workflows.',
     code: `coll = db.vectors.create("docs", dimension=384)
 coll.upsert("d1", embedding, metadata=meta)
@@ -51,7 +51,7 @@ coll.search(query_vec, k=5)`,
     icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />`,
   },
   {
-    name: 'Branches',
+    name: 'branch',
     description: 'Fork, diff, and merge your entire data state. Instant branch creation with full isolation.',
     code: `db.branches.create("experiment")
 db.checkout("experiment")
